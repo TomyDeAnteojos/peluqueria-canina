@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Responsive Navbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=eARwUq6q8yFck_3T7oKr8dQACSmIcI4Z7dWbkYNyX-YFpyJnfUEXFIeRbamH5QygkqjJfMealx-mTmYQXLeQfC3PWT81AXZZHblC4eSv49K7_p_gFNN4gWtQ3lvCCZYpFUhUO4dkWN23SBSrXJK5eCOPKnpoJbUH8iwLnWdaW11T7z4L-IA2Rj3lUPmoQADFBm3JydWSnJY1A_rCVtvCxWfih6hiazdnQGeamax1p7mK9YYPAfAMQssCv1jz4s2luxZtNPYad1iPW9DcFpmPhHq_Z0wQTqwvc86VhXzzdsLLKQNijEV5Ae49JbVG4yU67WhrOaN9tgyqZWGZTIKdvg" charset="UTF-8"></script><script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <label class="logo">Peluqueria Canina Tomi</label>
+
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="pages/catalogo.html">Productos y servicios</a></li>
+        <li><a href="pages/galeria.html">Galeria</a></li>
+        <li><a href="pages/contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+    <a href="https://wa.me/5491123822819">
+        <div class="btn_pedirTurno">
+            <img src="https://dd-cdn.multiscreensite.com/editor/whatsApp/whatsapp_layout_5.svg" alt="Envíenos un mensaje por WhatsApp">
+        </div>
+    </a>
+
+    <div class="carousel-container">
+        <div class="carousel-slide">
+          <div class="carousel-item">
+            <a href="/pages/catalogo.html" target="_blank">
+              <img src="img/art/a1.webp" alt="Imagen 1">
+            </a>
+            <div class="carousel-text">Ya llegaron nuestras chapitas, veni a buscar las tuyas!</div>
+          </div>
+          <div class="carousel-item">
+            <a href="/pages/galeria.html" target="_blank">
+              <img src="/img/dog/d11.webp" alt="Imagen 2">
+            </a>
+            <div class="carousel-text">Guau guau</div>
+          </div>
+          <div class="carousel-item">
+            <a href="/pages/catalogo.html" target="_blank">
+              <img src="img/art/a10.webp" alt="Imagen 3" height="70%">
+            </a>
+            <div class="carousel-text">Ropa navideña</div>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <span class="carousel-control" onclick="prevSlide()">&#10094;</span>
+          <span class="carousel-control" onclick="nextSlide()">&#10095;</span>
+        </div>
+      </div>
+
+      <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+      
+        function showSlide(index) {
+          const slideWidth = slides[0].clientWidth;
+          document.querySelector('.carousel-slide').style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+      
+        function prevSlide() {
+          currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+          showSlide(currentIndex);
+        }
+      
+        function nextSlide() {
+          currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+          showSlide(currentIndex);
+        }
+      </script>
+<br>
+<div class="info-container">
+    <div class="map details">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3290.1717812926363!2d-58.79375742453281!3d-34.4477870492794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9ed111def991%3A0xf300edf3fdb0ebaf!2sBatalla%20de%20Caseros%20156%2C%20B1664DYD%20Manuel%20Alberti%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1731466305789!5m2!1ses-419!2sar"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="details">
+      <div class="address-name">
+        Batalla de caseros 156
+      </div>
+      <div class="sub-address-name"></div>
+      Horarios con Turno
+
+      <div class="schedule">
+        <div class="day-box open">LUN<br>9-18</div>
+        <div class="day-box open">MAR<br>9-18</div>
+        <div class="day-box open">MIÉ<br>9-18</div>
+        <div class="day-box open">JUE<br>9-18</div>
+        <div class="day-box open">VIE<br>9-18</div>
+        <div class="day-box open">SAB<br>9-18</div>
+      </div>
+    </div>
+  </div>
+<br>
+<div class="faq-container">
+<h2>Preguntas Frecuentes</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">¿Usan tranquilizantes?</div>
+    <div class="faq-answer">No, solamente los médicos veterinarios pueden medicar un animal.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">¿Si tiene muchos nudos hay que pelar?</div>
+    <div class="faq-answer">La respuesta es sí, ya que al tener muchos nudos la piel no respira y, en caso de mojarse, puede quedar humedad y formarse afecciones como hongos o infecciones.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">¿Qué es un deslanado?</div>
+    <div class="faq-answer">Consta de cepillar el manto del animal, sacando todo el pelo muerto para así poder tener un pelaje en condiciones. (Generalmente se hace en razas grandes).</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">¿A partir de qué edad lo puedo llevar a la peluquería?</div>
+    <div class="faq-answer">Lo importante son las vacunas, es decir, que el animalito esté con el plan de vacunación completo para tener la inmunidad necesaria.</div>
+  </div>
+
+</div>
+<script>
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement;
+      faqItem.classList.toggle('active');
+    });
+  });
+</script>
+
+<br>
+  <footer class="pie-pag">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                    <img src="img/logo.png" alt="Logo de SLee Dw">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Nuestro enfoque es proporcionar un ambiente seguro, relajante y divertido
+              para su mascota. Utilizamos productos de alta calidad y técnicas innovadoras
+              para asegurarnos de que su perro se sienta cómodo y contento durante
+              todo el proceso.</p>
+        </div>
+        <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+                <a href="https://www.instagram.com/tomi_peluqueriacanina/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>Tomi Medel</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+
+</body>
+</html>
