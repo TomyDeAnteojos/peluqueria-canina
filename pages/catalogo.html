@@ -29,7 +29,7 @@
         <img src="https://dd-cdn.multiscreensite.com/editor/whatsApp/whatsapp_layout_5.svg" alt="Envíenos un mensaje por WhatsApp">
     </div>
 </a>
-  <br>
+  <br><br><br><br>
 
   <div class="catalog-page">
     <!-- Filtros -->
@@ -88,7 +88,7 @@
 
   <script>
     const products = [
-      { id: 1, name: "Chapitas", description: "Chapitas", price: 5500, category: "accesories", image: "../img/art/a1.webp" },
+      { id: 1, name: "Chapitas", description: "Chapitas", price: 5500, category: "accesories", image: "https://previews.dropbox.com/p/thumb/ACciM9RYUgz6Wc3_h7TLJR65hdQNuldBTwo5f4p7Y471C2wrK-rN_Vud5wx5TQMYXFKCIHPvZ118yvtT8sj3tY-ZnZ8RW76cpQ3i0-D_4ScLxdsssW8Tnk873LyEmUrbLjKZPlzES8TZNkIrHlD1GY8z-SYeilctaMKakrnutxc9MXg7iEbBPnzv-w4PnstFfBcWd7fsAO_xrpGjGKz2mnARxBJ-8DcFns9u3NoCfCJKQgnNg3tMsCIyymv8k7N9qH1BrhSFNML5i7zMpOZVQtU-17K0ZD6ttGEmU-F71rmJK9tHXyTXv_fJboOghBtP-ks/p.png" },
       { id: 2, name: "Bebedor chico", description: "Bebedor chico", price: 5000, category: "foot", image: "../img/art/a2.webp" },
       { id: 3, name: "Pipetas", description: "de 2-10: $2500 | 10-25:2500 | 20-40:3000", price: "2500 - 3000", category: "salud", image: "../img/art/a3.webp" },
       { id: 4, name: "Bebedor grande", description: "Bebedor grande", price: 6000, category: "foot", image: "../img/art/a4.webp" },
@@ -98,6 +98,7 @@
       { id: 8, name: "Correa", description: "Correa para perros", price: 300, category: "accesories", image: "../img/art/a8.webp" },
       { id: 9, name: "Collar", description: "Collar para perros", price: 800, category: "accesories", image: "../img/art/a9.webp" },
       { id: 10, name: "Ropa para Perros", description: "Estilo y comodidad", price: 200, category: "accesories", image: "../img/art/a10.webp" },
+      { id: 11, name: "pipeta", description: "pipeta para gato", price: 4000, category: "salud", image: "../img/art/a4.webp" },
     ];
 
     const catalogGrid = document.getElementById("catalogGrid");
@@ -148,7 +149,7 @@
     priceFilter.addEventListener("change", renderProducts);
     renderProducts();
   </script>
-
+<script src="../JS/archivo.js" defer></script>
 </body>
 
 </html>

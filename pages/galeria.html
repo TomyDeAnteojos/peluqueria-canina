@@ -32,6 +32,7 @@
         <img src="https://dd-cdn.multiscreensite.com/editor/whatsApp/whatsapp_layout_5.svg" alt="Envíenos un mensaje por WhatsApp">
     </div>
 </a>
+<br><br><br><br>
   <div class="gallery-container" id="gallery-container">
   </div>
 
@@ -68,45 +69,9 @@
 </footer>
 
 <script>
-  // Generar nombres de archivo desde d1.webp hasta d15.webp
-  const images = Array.from({ length: 15 }, (_, i) => `d${i + 1}.webp`);
-
-  // Variables de control
-  const galleryContainer = document.getElementById('gallery-container');
-  const loadMoreButton = document.getElementById('load-more-button');
-  let currentIndex = 0;
-  const imagesPerLoad = 10;
-
-  // Función para cargar imágenes
-  function loadImages() {
-    const nextIndex = Math.min(currentIndex + imagesPerLoad, images.length);
-    for (let i = currentIndex; i < nextIndex; i++) {
-      const imgElement = document.createElement('img');
-      imgElement.src = `../img/dog/${images[i]}`;
-      imgElement.alt = `Imagen de perro ${images[i]}`;
-
-      const galleryItem = document.createElement('div');
-      galleryItem.className = 'gallery-item';
-      galleryItem.appendChild(imgElement);
-
-      galleryContainer.appendChild(galleryItem);
-    }
-
-    currentIndex = nextIndex;
-
-    // Ocultar botón si no hay más imágenes
-    if (currentIndex >= images.length) {
-      loadMoreButton.style.display = 'none';
-    }
-  }
-
-  // Evento para cargar más imágenes
-  loadMoreButton.addEventListener('click', loadImages);
-
-  // Cargar las primeras imágenes al inicio
-  loadImages();
+  
 </script>
-
+<script src="../JS/archivo.js" defer></script>
 </body>
 
 </html>
