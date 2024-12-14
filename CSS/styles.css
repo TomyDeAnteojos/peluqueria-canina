@@ -254,10 +254,13 @@ section {
 
 .carousel-text {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   color: #efefef;
   background-color: #0a141d;
   z-index: 10;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-shrink: 0; /* No reduce la caja más allá de su contenido */
 }
 
 .carousel-controls {

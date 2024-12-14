@@ -14,7 +14,7 @@ function loadImages() {
   const nextIndex = Math.min(currentIndex + imagesPerLoad, images.length);
   for (let i = currentIndex; i < nextIndex; i++) {
     const imgElement = document.createElement('img');
-    imgElement.src = `../img/dog/${images[i]}`;
+    imgElement.src = `https://shiny-sfogliatella-a7500f.netlify.app/dog/${images[i]}`;
     imgElement.alt = `Imagen de perro ${images[i]}`;
 
     const galleryItem = document.createElement('div');
@@ -70,9 +70,9 @@ const products = [
 
     const filteredProducts = products.filter(product => {
       return priceValue === "all" ||
-        (priceValue === "low" && product.price < 500) ||
-        (priceValue === "medium" && product.price >= 500 && product.price <= 1000) ||
-        (priceValue === "high" && product.price > 1000);
+        (priceValue === "low" && product.price < 1000) ||
+        (priceValue === "medium" && product.price >= 1000 && product.price <= 2500) ||
+        (priceValue === "high" && product.price > 2500);
     });
 
     filteredProducts.forEach(product => {
