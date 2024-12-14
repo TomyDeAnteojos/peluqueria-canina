@@ -69,7 +69,37 @@
 </footer>
 
 <script>
-  
+  const images = Array.from({ length: 15 }, (_, i) => `d${i + 1}.webp`);
+
+const galleryContainer = document.getElementById('gallery-container');
+const loadMoreButton = document.getElementById('load-more-button');
+let currentIndex = 0;
+const imagesPerLoad = 10;
+
+function loadImages() {
+  const nextIndex = Math.min(currentIndex + imagesPerLoad, images.length);
+  for (let i = currentIndex; i < nextIndex; i++) {
+    const imgElement = document.createElement('img');
+    imgElement.src = `https://shiny-sfogliatella-a7500f.netlify.app/dog/${images[i]}`;
+    imgElement.alt = `Imagen de perro ${images[i]}`;
+
+    const galleryItem = document.createElement('div');
+    galleryItem.className = 'gallery-item';
+    galleryItem.appendChild(imgElement);
+
+    galleryContainer.appendChild(galleryItem);
+  }
+
+  currentIndex = nextIndex;
+
+  if (currentIndex >= images.length) {
+    loadMoreButton.style.display = 'none';
+  }
+}
+
+loadMoreButton.addEventListener('click', loadImages);
+
+loadImages();
 </script>
 <script src="../JS/archivo.js" defer></script>
 </body>
