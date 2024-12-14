@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Responsive Navbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <!--
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=eARwUq6q8yFck_3T7oKr8dQACSmIcI4Z7dWbkYNyX-YFpyJnfUEXFIeRbamH5QygkqjJfMealx-mTmYQXLeQfC3PWT81AXZZHblC4eSv49K7_p_gFNN4gWtQ3lvCCZYpFUhUO4dkWN23SBSrXJK5eCOPKnpoJbUH8iwLnWdaW11T7z4L-IA2Rj3lUPmoQADFBm3JydWSnJY1A_rCVtvCxWfih6hiazdnQGeamax1p7mK9YYPAfAMQssCv1jz4s2luxZtNPYad1iPW9DcFpmPhHq_Z0wQTqwvc86VhXzzdsLLKQNijEV5Ae49JbVG4yU67WhrOaN9tgyqZWGZTIKdvg" charset="UTF-8"></script><script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  -->
+ </head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <label class="logo">Peluqueria Canina Tomi</label>
+
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="catalogo.html">Productos y servicios</a></li>
+        <li><a class="active" href="galeria.html">Galeria</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <a href="https://wa.me/5491123822819">
+    <div class="btn_pedirTurno">
+        <img src="https://dd-cdn.multiscreensite.com/editor/whatsApp/whatsapp_layout_5.svg" alt="Envíenos un mensaje por WhatsApp">
+    </div>
+</a>
+<br><br><br><br>
+  <div class="gallery-container" id="gallery-container">
+  </div>
+
+  <div class="load-more-container" id="load-more-container">
+      <button id="load-more-button" class="load-more-btn">Cargar más</button>
+    </div>
+
+  <footer class="pie-pag">
+    <div class="grupo-1">
+        <div class="box">
+            <figure>
+                <a href="#">
+                  <img src="https://fancy-taiyaki-404413.netlify.app/logo.webp" alt="Logo Peluquería Canina">
+                </a>
+            </figure>
+        </div>
+        <div class="box">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>Nuestro enfoque es proporcionar un ambiente seguro, relajante y divertido
+              para su mascota. Utilizamos productos de alta calidad y técnicas innovadoras
+              para asegurarnos de que su perro se sienta cómodo y contento durante
+              todo el proceso.</p>
+        </div>
+        <div class="box">
+            <h2>SIGUENOS</h2>
+            <div class="red-social">
+              <a href="https://www.instagram.com/tomi_peluqueriacanina/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 <b>Tomi Medel</b> - Todos los Derechos Reservados.</small>
+    </div>
+</footer>
+
+<script>
+  const images = [
+    { id: 1, description: "Imagen 1", image: "https://fancy-taiyaki-404413.netlify.app/dog/d1.webp" },
+    { id: 2, description: "Imagen 2", image: "https://fancy-taiyaki-404413.netlify.app/dog/d2.webp" },
+    { id: 3, description: "Imagen 3", image: "https://fancy-taiyaki-404413.netlify.app/dog/d3.webp" },
+    { id: 4, description: "Imagen 4", image: "https://fancy-taiyaki-404413.netlify.app/dog/d4.webp" },
+    { id: 5, description: "Imagen 5", image: "https://fancy-taiyaki-404413.netlify.app/dog/d5.webp" },
+    { id: 6, description: "Imagen 6", image: "https://fancy-taiyaki-404413.netlify.app/dog/d6.webp" },
+    { id: 7, description: "Imagen 7", image: "https://fancy-taiyaki-404413.netlify.app/dog/d7.webp" },
+    { id: 8, description: "Imagen 8", image: "https://fancy-taiyaki-404413.netlify.app/dog/d8.webp" },
+    { id: 9, description: "Imagen 9", image: "https://fancy-taiyaki-404413.netlify.app/dog/d9.webp" },
+    { id: 10, description: "Imagen 10", image: "https://fancy-taiyaki-404413.netlify.app/dog/d10.webp" }, 
+    { id: 11, description: "Imagen 11", image: "https://fancy-taiyaki-404413.netlify.app/dog/d11.webp" },
+    { id: 12, description: "Imagen 12", image: "https://fancy-taiyaki-404413.netlify.app/dog/d12.webp" },
+    { id: 13, description: "Imagen 13", image: "https://fancy-taiyaki-404413.netlify.app/dog/d13.webp" },
+    { id: 14, description: "Imagen 14", image: "https://fancy-taiyaki-404413.netlify.app/dog/d14.webp" }, 
+    { id: 15, description: "Imagen 15", image: "https://fancy-taiyaki-404413.netlify.app/dog/d15.webp"},
+];
+
+const galleryContainer = document.getElementById('gallery-container');
+const loadMoreButton = document.getElementById('load-more-button');
+let currentIndex = 0;
+const imagesPerLoad = 10;
+
+function loadImages() {
+    const nextIndex = Math.min(currentIndex + imagesPerLoad, images.length);
+    for (let i = currentIndex; i < nextIndex; i++) {
+        const imageItem = images[i];
+
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+
+        if (imageItem.image) {
+            const imgElement = document.createElement('img');
+            imgElement.src = imageItem.image;
+            imgElement.alt = imageItem.description;
+            galleryItem.appendChild(imgElement);
+        } else {
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = imageItem.description;
+            galleryItem.appendChild(descriptionElement);
+        }
+
+        galleryContainer.appendChild(galleryItem);
+    }
+
+    currentIndex = nextIndex;
+
+    if (currentIndex >= images.length) {
+        loadMoreButton.style.display = 'none';
+    }
+}
+
+loadMoreButton.addEventListener('click', loadImages);
+
+loadImages();
+</script>
+<script src="../JS/archivo.js" defer></script>
+</body>
+
+</html>

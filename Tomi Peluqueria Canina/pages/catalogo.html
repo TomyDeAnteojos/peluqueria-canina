@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Responsive Navbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+  -->
+  
+</head>
+
+<body>
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">Peluquería Canina Tomi</label>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a class="active" href="catalogo.html">Productos y servicios</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <a href="https://wa.me/5491123822819">
+    <div class="btn_pedirTurno">
+        <img src="https://dd-cdn.multiscreensite.com/editor/whatsApp/whatsapp_layout_5.svg" alt="Envíenos un mensaje por WhatsApp">
+    </div>
+</a>
+  <br><br><br><br>
+
+  <div class="catalog-page">
+    <!-- Filtros -->
+    <div class="filter-section">
+      <label for="priceFilter">Filtrar por precio:</label>
+      <select id="priceFilter">
+        <option value="all">Todos</option>
+        <option value="low">Menor a $1000</option>
+        <option value="medium">$1000 - $2500</option>
+        <option value="high">Mayor a $2500</option>
+      </select>
+    </div>
+
+   <a href="#productDetails"></a>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+
+  <div class="product-details" id="productDetails" style="display: none;">
+    <div class="details-card">
+      <img id="detailsImage" src="" alt="Product Image" class="details-image">
+      <h3 id="detailsName" class="details-name" style="text-align: center;"></h3>
+      <p id="detailsDescription" class="details-description" style="text-align: center;"></p>
+      <p id="detailsPrice" class="details-price" style="text-align: center;"></p>
+      <button id="buyButton" class="cta-button">Comprar</button>
+    </div>
+  </div>
+  <br>
+
+  <footer class="pie-pag">
+    <div class="grupo-1">
+      <div class="box">
+        <figure>
+          <a href="#">
+            <img src="https://shiny-sfogliatella-a7500f.netlify.app/logo.webp" alt="Logo Peluquería Canina">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>Nuestro enfoque es proporcionar un ambiente seguro, relajante y divertido
+          para su mascota. Utilizamos productos de alta calidad y técnicas innovadoras
+          para asegurarnos de que su perro se sienta cómodo y contento durante
+          todo el proceso.</p>
+      </div>
+      <div class="box">
+        <h2>SÍGUENOS</h2>
+        <div class="red-social">
+          <a href="https://www.instagram.com/tomi_peluqueriacanina/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="grupo-2">
+      <small>&copy; 2024 <b>Tomi Medel</b> - Todos los Derechos Reservados.</small>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      { id: 1, name: "Chapitas", description: "Chapitas", price: 5500, category: "accesories", image: "https://fancy-taiyaki-404413.netlify.app/art/a1.webp" },
+      { id: 2, name: "Bebedor chico", description: "Bebedor chico", price: 5000, category: "foot", image: "https://fancy-taiyaki-404413.netlify.app/art/a2.webp" },
+      { id: 3, name: "Pipetas", description: "de 2-10: $2500 | 10-25:2500 | 20-40:3000", price: "2500 - 3000", category: "salud", image: "https://fancy-taiyaki-404413.netlify.app/art/a3.webp" },
+      { id: 4, name: "Bebedor grande", description: "Bebedor grande", price: 6000, category: "foot", image: "https://fancy-taiyaki-404413.netlify.app/art/a4.webp" },
+      { id: 5, name: "Kit sanitario", description: "Kit sanitario", price: 4500, category: "salud", image: "https://fancy-taiyaki-404413.netlify.app/art/a5.webp" },
+      { id: 6, name: "Shampoo Antipulgas", description: "Elimina pulgas y garrapatas", price: 400, category: "shampoo", image: "https://fancy-taiyaki-404413.netlify.app/art/a6.webp" },
+      { id: 7, name: "Pipeta", description: "10 kg $4500 | 20 kg 5600 | 40 kg 6700", price: "4500 - 6700", category: "food", image: "https://fancy-taiyaki-404413.netlify.app/art/a7.webp" },
+      { id: 8, name: "Correa", description: "Correa para perros", price: 300, category: "accesories", image: "https://fancy-taiyaki-404413.netlify.app/art/a8.webp" },
+      { id: 9, name: "Collar", description: "Collar para perros", price: 800, category: "accesories", image: "https://fancy-taiyaki-404413.netlify.app/art/a9.webp" },
+      { id: 10, name: "Ropa para Perros", description: "Estilo y comodidad", price: 200, category: "accesories", image: "https://fancy-taiyaki-404413.netlify.app/art/a10.webp" },
+      { id: 11, name: "pipeta", description: "pipeta para gato", price: 4000, category: "salud", image: "https://fancy-taiyaki-404413.netlify.app/art/a4.webp" },
+    ];
+
+    const catalogGrid = document.getElementById("catalogGrid");
+    const priceFilter = document.getElementById("priceFilter");
+    const productDetails = document.getElementById("productDetails");
+    const detailsImage = document.getElementById("detailsImage");
+    const detailsName = document.getElementById("detailsName");
+    const detailsDescription = document.getElementById("detailsDescription");
+    const detailsPrice = document.getElementById("detailsPrice");
+    const buyButton = document.getElementById("buyButton");
+
+    function renderProducts() {
+      const priceValue = priceFilter.value;
+      catalogGrid.innerHTML = "";
+
+      const filteredProducts = products.filter(product => {
+        return priceValue === "all" ||
+          (priceValue === "low" && product.price < 500) ||
+          (priceValue === "medium" && product.price >= 500 && product.price <= 1000) ||
+          (priceValue === "high" && product.price > 1000);
+      });
+
+      filteredProducts.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.className = "product-card";
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="product-image" />
+          <h3 class="product-name">${product.name}</h3>
+          <p class="product-price">$${product.price}</p>
+        `;
+        productCard.addEventListener("click", () => showProductDetails(product));
+        catalogGrid.appendChild(productCard);
+      });
+    }
+
+    function showProductDetails(product) {
+      detailsImage.src = product.image;
+      detailsName.textContent = product.name;
+      detailsDescription.textContent = product.description;
+      detailsPrice.textContent = `Precio: $${product.price}`;
+      buyButton.onclick = () => {
+        window.open(`https://wa.me/5491123822819?text=Hola%20estoy%20interesado%20en%20comprar%20${encodeURIComponent(product.name)}`, "_blank");
+      };
+      productDetails.style.display = "block";
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    priceFilter.addEventListener("change", renderProducts);
+    renderProducts();
+  </script>
+<script src="../JS/archivo.js" defer></script>
+</body>
+
+</html>
