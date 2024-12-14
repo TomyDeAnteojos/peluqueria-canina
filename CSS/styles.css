@@ -219,7 +219,6 @@ section {
   max-height: 600px;
   margin: auto;
   overflow: hidden;
-  z-index: 3;
 }
 
 .carousel-slide {
@@ -258,6 +257,7 @@ section {
   font-size: 18px;
   color: #efefef;
   background-color: #0a141d;
+  z-index: 10;
 }
 
 .carousel-controls {
